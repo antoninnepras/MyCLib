@@ -1,6 +1,6 @@
 CC	= gcc
 CFLAGS	= -Wall -g -O3
-LSFLAGS	= #insert link flags
+LSFLAGS	= -lm
 TARGET	= main
 
 CFILES  = $(wildcard src/*.c)
