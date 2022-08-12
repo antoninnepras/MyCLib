@@ -1,12 +1,12 @@
 #MyCLib
 Files for later use in my other projects
 
-[CSort](CSort/README.md)
-[CList](CList/README.md)
-[CListSort](CListSort/README.md)
-[CVector](CVector/README.md)
-[CKinematics](CKinematics/README.md)
-[CDynamics](CDynamics/README.md)
+- [CSort](CSort/README.md)
+- [CList](CList/README.md)
+- [CListSort](CListSort/README.md)
+- [CVector](CVector/README.md)
+- [CKinematics](CKinematics/README.md)
+- [CDynamics](CDynamics/README.md)
 
 ```
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿

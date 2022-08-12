@@ -6,4 +6,4 @@ Metric by which elements of the array are sorted is defined in the program (not 
 
 Function for evaluating strings for later sort is added too.
 
-[MyCLib](../README.md)
+- [MyCLib](../README.md)
