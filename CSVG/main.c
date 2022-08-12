@@ -1,3 +1,15 @@
+/**
+ * @file main.c
+ * @author Antonin Nepras
+ * @brief Test file for CSVG
+ * @version 0.1
+ * @date 2022-08-12
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+
 #include "src/svg.h"
 #include "src/svg_primitives.h"
 
