@@ -7,6 +7,7 @@ Files for later use in my other projects
 - [CVector](CVector/README.md)
 - [CKinematics](CKinematics/README.md)
 - [CDynamics](CDynamics/README.md)
+- [CSVG](CSVG/README.md)
 
 ```
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
