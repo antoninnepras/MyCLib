@@ -146,7 +146,7 @@ exp_path2_to_svg(Vec2* path, int size, const char* file)
   fprintf(fp, "<polyline points=\"");
   for (int i = 0; i < size; ++i) {
     fprintf(
-      fp, "%lf,%lf ", path[i].x + minx + border, path[i].y + miny + border);
+      fp, "%lf,%lf ", path[i].x - minx + border, path[i].y - miny + border);
   }
   fprintf(fp, "\"\n");
   fprintf(fp, "style=\"fill:transparent;stroke:red;stroke-width:1\" />\n");
