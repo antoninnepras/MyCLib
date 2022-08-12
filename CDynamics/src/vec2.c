@@ -1,5 +1,5 @@
 /**
- * @file Vec2.h
+ * @file Vec2.c
  * @author Antonin Nepras
  * @brief Vec2 structure implementation
  * @version 0.1

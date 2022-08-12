@@ -1,5 +1,5 @@
 /**
- * @file Vec3.h
+ * @file Vec3.c
  * @author Antonin Nepras
  * @brief Vec3 structure implementation
  * @version 0.1

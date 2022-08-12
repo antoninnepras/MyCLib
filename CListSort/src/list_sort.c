@@ -1,5 +1,5 @@
 /**
- * @file list_sort.h
+ * @file list_sort.c
  * @author Antonin Nepras
  * @brief List sort implementation
  * @version 0.1

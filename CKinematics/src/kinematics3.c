@@ -1,5 +1,5 @@
 /**
- * @file kinematics2.h
+ * @file kinematics2.c
  * @author Antonin Nepras
  * @brief 3D Kinematics implementation
  * @version 0.1
