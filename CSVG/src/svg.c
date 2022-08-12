@@ -168,7 +168,7 @@ svg_obj_fprint(FILE* fp, SVG_obj* obj)
   } else {
     fprintf(fp, ">\n");
     fprintf(fp, "%s\n", obj->text);
-    fprintf(fp, "</%s\n>", obj->name);
+    fprintf(fp, "</%s>\n", obj->name);
   }
 }
 
