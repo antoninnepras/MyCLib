@@ -1,5 +1,5 @@
 /**
- * @file dynamics2.h
+ * @file dynamics2.c
  * @author Antonin Nepras
  * @brief 2D Dynamics implementation
  * @version 0.1
@@ -10,7 +10,6 @@
  */
 
 
-#include <stdio.h>
 #include "dynamics2.h"
 
 

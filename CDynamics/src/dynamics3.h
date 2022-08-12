@@ -1,7 +1,7 @@
 /**
- * @file dynamics2.h
+ * @file dynamics3.h
  * @author Antonin Nepras
- * @brief 2D Dynamics
+ * @brief 3D Dynamics
  * @version 0.1
  * @date 2022-08-12
  *
@@ -10,37 +10,33 @@
  */
 
 
-#ifndef __dynamics2_h__
-#define __dynamics2_h__
-
-
 #include <stdlib.h>
 
-#include "kinematics2.h"
-#include "vec2.h"
+#include "kinematics3.h"
+#include "vec3.h"
 
 
 /**
- * @brief 2D dynamics material point
+ * @brief 3D dynamics material point
  *
  */
 typedef struct
 {
-  Kin2 kin;
+  Kin3 kin;
   double mass;
-} Dyn2;
+} Dyn3;
 
 
 /**
- * @brief 2D central force field
+ * @brief 3D central force field
  *
  */
 typedef struct
 {
-  Vec2 pos;
+  Vec3 pos;
   double intensity;
   int dpower;
-} FF2Central;
+} FF3Central;
 
 
 /**
@@ -50,7 +46,7 @@ typedef struct
  * @param force 
  */
 void
-dyn2_apply_force(Dyn2* dyn, Vec2 force);
+dyn3_apply_force(Dyn3* dyn, Vec3 force);
 
 
 /**
@@ -60,7 +56,7 @@ dyn2_apply_force(Dyn2* dyn, Vec2 force);
  * @param time 
  */
 void
-dyn2_move(Dyn2* dyn, double time);
+dyn3_move(Dyn3* dyn, double time);
 
 
 /**
@@ -71,7 +67,7 @@ dyn2_move(Dyn2* dyn, double time);
  * @param dist 
  */
 void
-dyn2_move_dist(Dyn2* dyn, double time, double* dist);
+dyn3_move_dist(Dyn3* dyn, double time, double* dist);
 
 
 /**
@@ -81,7 +77,4 @@ dyn2_move_dist(Dyn2* dyn, double time, double* dist);
  * @param ff 
  */
 void
-dyn2_apply_ffcentral(Dyn2* dyn, FF2Central ff);
-
-
-#endif
+dyn3_apply_ffcentral(Dyn3* dyn, FF3Central ff);
