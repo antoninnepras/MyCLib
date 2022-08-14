@@ -11,7 +11,7 @@ all: $(TARGETS)
 
 objects: $(OBJECTS)
 
-$(TARGETS): $(OBJECTS)
+$(TARGETS): $(OBJECTS) $(addsuffix .c,$(TARGETS))
 	$(CC) $(CFLAGS) $(LSFLAGS) $@.c -c
 	$(CC) $(CFLAGS) $(LSFLAGS) $(OBJECTS) $@.o -o $@
 
