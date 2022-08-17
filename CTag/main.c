@@ -13,6 +13,10 @@
 #include "src/tag.h"
 
 
+void
+tag_tree_print(Tag* tag, int indent);
+
+
 int
 main(int argc, const char** argv)
 {
@@ -40,7 +44,23 @@ main(int argc, const char** argv)
                    "font-size:25");
   tag_add_child(body, paragraph);
 
+  tag_tree_print(html, 0);
+
   // export and delete html tag
   tag_export(html, "test.html");
   tag_del(html);
+}
+
+
+void
+tag_tree_print(Tag* tag, int indent)
+{
+  for (int i = 0; i < indent; ++i) {
+    putchar('\t');
+  }
+
+  printf("%s\n",tag->name);
+  for (int i = 0; i < tag->childs->size; ++i) {
+    tag_tree_print(list_get(tag->childs, i), indent + 1);
+  }
 }
