@@ -76,4 +76,8 @@ void
 map_insert_column(Map* map, int c);
 
 
+void***
+map_to_2d_array(Map* map);
+
+
 #endif

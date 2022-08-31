@@ -235,3 +235,22 @@ map_insert_column(Map* map, int c)
     list_insert((List*)list_get(map->data, i), NULL, c);
   }
 }
+
+
+void***
+map_to_2d_array(Map* map)
+{
+  if (map == NULL) {
+    return NULL;
+  }
+
+  void*** data = (void***)malloc(sizeof(void**) * map->r);
+  for (int i = 0; i < map->r; ++i) {
+    data[i] = (void**)malloc(sizeof(void*) * map->c);
+    for (int j = 0; j < map->c; ++j) {
+      data[i][j] = map_get(map, i, j);
+    }
+  }
+
+  return data;
+}
