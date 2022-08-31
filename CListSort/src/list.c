@@ -52,7 +52,7 @@ list_del(List* list)
 void
 list_append(List* list, void* data)
 {
-  if (list == NULL || data == NULL) {
+  if (list == NULL) {
     return;
   }
 
@@ -71,7 +71,7 @@ list_append(List* list, void* data)
 void
 list_prepend(List* list, void* data)
 {
-  if (list == NULL || data == NULL) {
+  if (list == NULL) {
     return;
   }
 
@@ -132,7 +132,7 @@ list_pop_front(List* list)
 void
 list_insert(List* list, void* data, int index)
 {
-  if (list == NULL || data == NULL || index < 0) {
+  if (list == NULL || index < 0) {
     return;
   }
 
