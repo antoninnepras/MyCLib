@@ -174,4 +174,14 @@ List*
 list_from_array(void** data_array, int size);
 
 
+/**
+ * @brief Execute function for all elements (linear)
+ * 
+ * @param list 
+ * @param action 
+ */
+void
+list_do_for_all(List* list, void (*action)(void* data));
+
+
 #endif

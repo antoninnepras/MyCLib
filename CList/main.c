@@ -68,10 +68,8 @@ main(int argc, const char** argv)
 
   free(array);
 
-  // remove all data from list
-  while (list->size > 0) {
-    free(list_remove(list, 0));
-  }
+  // free all elements of list
+  list_do_for_all(list, free);
 
   // delete empty list
   list_del(list);

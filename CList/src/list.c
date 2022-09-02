@@ -270,3 +270,20 @@ list_from_array(void** data_array, int size)
 
   return list;
 }
+
+
+void
+list_do_for_all(List* list, void (*action)(void* data))
+{
+  if (list == NULL || action == NULL) {
+    return;
+  }
+
+  LNode* tmp = list->begin;
+  while (tmp != NULL) {
+    action(tmp->data);
+    tmp = tmp->next;
+  }
+
+  return;
+}
