@@ -1,3 +1,14 @@
+/**
+ * @file string.c
+ * @author Antonin Nepras
+ * @brief CString implementation
+ * @version 0.1
+ * @date 2022-09-25
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 #include "string.h"
 
 

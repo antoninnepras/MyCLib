@@ -1,3 +1,14 @@
+/**
+ * @file string.h
+ * @author Antonin Nepras
+ * @brief simple string
+ * @version 0.1
+ * @date 2022-09-25
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 #ifndef __string_h__
 #define __string_h__
 
