@@ -12,6 +12,7 @@ Files for later use in my other projects
 - [CDynamics](CDynamics/README.md)
 - [CTag](CTag/README.md)
 - [CSVG](CSVG/README.md)
+- [CString](CString/README.md)
 - [Makefile](Makefiles/README.md)
 - [CTag](CTag/README.md)
 
