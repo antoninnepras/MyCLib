@@ -2,14 +2,17 @@
 Files for later use in my other projects
 
 - [CSort](CSort/README.md)
+- [CDynArray](CDynArray/README.md)
 - [CList](CList/README.md)
 - [CListSort](CListSort/README.md)
+- [CMap](CMap/README.md)
 - [CVector](CVector/README.md)
+- [CMatrix](CMatrix/README.md)
 - [CKinematics](CKinematics/README.md)
 - [CDynamics](CDynamics/README.md)
+- [CTag](CTag/README.md)
 - [CSVG](CSVG/README.md)
 - [Makefile](Makefiles/README.md)
-- [CMatrix](CMatrix/README.md)
 - [CTag](CTag/README.md)
 
 

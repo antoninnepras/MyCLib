@@ -1,4 +1,7 @@
 # CMap
+
+___Index: [MyCLib](../README.md)___
+
 2D container with advanced functions
 
-- [MyCLib](../README.md)
+Implemented as linked list of linked lists

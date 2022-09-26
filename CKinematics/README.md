@@ -1,4 +1,7 @@
 # CKinemetics
-functions for moving material point
 
-- [MyCLib](../README.md)
+___Index: [MyCLib](../README.md)___
+
+
+Library for moving kinematic object
+

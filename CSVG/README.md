@@ -1,4 +1,4 @@
 # CSVG
-svg drawing in C for export only
+___Index: [MyCLib](../README.md)___
 
-- [MyCLib](../README.md)
+svg drawing in C for export only

@@ -1,4 +1,6 @@
 # CListSort
-Sorting funcitons for List structure
 
-- [MyCLib](../README.md)
+___Index: [MyCLib](../README.md)___
+
+
+Sorting functions for List structure
