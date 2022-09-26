@@ -19,5 +19,9 @@ $(OBJECTS): $(CFILES) $(HEADERS)
 	$(CC) $(CFLAGS) $(LSFLAGS) $(patsubst %.o,%.c,$@) -c
 	mv -f $(patsubst src/%,%,$@) $@
 
+format:
+	clang-format -i $(CFILES) $(HEADERS)
+
+
 clean:
 	rm -rf *.o $(TARGETS) src/*o

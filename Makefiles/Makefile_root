@@ -18,5 +18,9 @@ $(TARGETS): $(OBJECTS) $(addsuffix .c,$(TARGETS))
 $(OBJECTS): $(CFILES) $(HEADERS)
 	$(CC) -c $(CFLAGS) $(LSFLAGS) $(patsubst %.o,%.c,$@)
 
+format:
+	clang-format -i $(CFILES) $(HEADERS)
+
+
 clean:
 	rm -rf *.o $(TARGETS)
