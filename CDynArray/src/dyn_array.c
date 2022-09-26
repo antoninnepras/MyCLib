@@ -4,9 +4,9 @@
  * @brief Simple Dynamic array implementation
  * @version 0.1
  * @date 2022-09-20
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #include "dyn_array.h"
@@ -132,8 +132,8 @@ dyn_arr_pop_back(DynArr* arr)
   void* value = arr->data[arr->size];
 
   if (arr->capacity > 2 * arr->size && arr->capacity != DYN_ARR_MIN_CAP) {
-    if (arr->capacity > 2 * DYN_ARR_MIN_CAP) {
-      dyn_arr_resize(arr, arr->size / 2);
+    if (arr->capacity > 3 * DYN_ARR_MIN_CAP) {
+      dyn_arr_resize(arr, arr->size / 3);
     } else {
       dyn_arr_remove(arr, DYN_ARR_MIN_CAP);
     }
@@ -165,8 +165,8 @@ dyn_arr_remove(DynArr* arr, long position)
   }
 
   if (arr->capacity > 2 * arr->size && arr->capacity != DYN_ARR_MIN_CAP) {
-    if (arr->capacity > 2 * DYN_ARR_MIN_CAP) {
-      dyn_arr_resize(arr, arr->size / 2);
+    if (arr->capacity > 3 * DYN_ARR_MIN_CAP) {
+      dyn_arr_resize(arr, arr->size / 3);
     } else {
       dyn_arr_remove(arr, DYN_ARR_MIN_CAP);
     }
