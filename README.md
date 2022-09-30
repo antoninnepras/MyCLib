@@ -8,6 +8,7 @@ Files for later use in my other projects
 - [CMap](CMap/README.md)
 - [CVector](CVector/README.md)
 - [CMatrix](CMatrix/README.md)
+- [CDynMatrix](CDynMatrix/README.md)
 - [CKinematics](CKinematics/README.md)
 - [CDynamics](CDynamics/README.md)
 - [CTag](CTag/README.md)
