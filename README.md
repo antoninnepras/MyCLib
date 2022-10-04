@@ -29,4 +29,5 @@ Files for later use in my other projects
 ## Development
 - [Makefile](Makefiles/README.md)
 - [Templates](Templates/README.md)
+- [CLog](CLog/README.md)
 
