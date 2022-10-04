@@ -22,6 +22,7 @@ $(OBJECTS): $(CFILES) $(HEADERS)
 format:
 	clang-format -i $(CFILES) $(HEADERS)
 
-
 clean:
 	rm -rf *.o $(TARGETS) src/*o
+
+.PHONY: clean format

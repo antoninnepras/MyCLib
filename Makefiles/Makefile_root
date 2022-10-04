@@ -24,3 +24,5 @@ format:
 
 clean:
 	rm -rf *.o $(TARGETS)
+
+.PHONY: clean format
