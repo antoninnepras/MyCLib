@@ -90,6 +90,16 @@ string_load_line(FILE* file);
 
 
 /**
+ * @brief Load file to string structure
+ *
+ * @param filename
+ * @return String*
+ */
+String*
+string_load_file(const char* filename);
+
+
+/**
  * @brief Add two strings, new string is created
  *
  * @param str1    string 1

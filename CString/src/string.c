@@ -160,6 +160,46 @@ string_load_line(FILE* file)
 
 
 String*
+string_load_file(const char* filename)
+{
+  FILE* file = fopen(filename, "r");
+  if (file == NULL) {
+    return NULL;
+  }
+
+  DynArr* line_arr = dyn_arr_new();
+  char c;
+  while (true) {
+    c = getc(file);
+    if (c == EOF) {
+      break;
+    }
+
+    char* tmp = (char*)malloc(sizeof(char));
+    *tmp = c;
+    dyn_arr_append(line_arr, tmp);
+  }
+
+  fclose(file);
+
+  if (line_arr->size == 0) {
+    dyn_arr_del(line_arr);
+    return NULL;
+  }
+
+  String* line = string_new_length(line_arr->size);
+  for (int i = 0; i < line_arr->size; ++i) {
+    line->string[i] = *(char*)line_arr->data[i];
+  }
+
+  line->string[line->length] = '\0';
+
+  dyn_arr_del_all(line_arr, free);
+  return line;
+}
+
+
+String*
 string_add(String* str1, String* str2)
 {
   if (str1 == NULL || str2 == NULL) {
