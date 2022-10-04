@@ -19,6 +19,8 @@ Files for later use in my other projects
 - [CVector](CVector/README.md)
 - [CMatrix](CMatrix/README.md)
 - [CDynMatrix](CDynMatrix/README.md)
+- [CTriangle](CTriangle/README.md)
+
 
 ## Physics
 - [CKinematics](CKinematics/README.md)
