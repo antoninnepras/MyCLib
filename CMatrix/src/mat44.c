@@ -52,6 +52,13 @@ mat44_init(double m00,
 }
 
 
+Mat44
+mat44_id(void)
+{
+  return mat44_init(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+
 Vec4
 mat44_rvec(Mat44 m, int r)
 {

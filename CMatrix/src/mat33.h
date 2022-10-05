@@ -37,6 +37,10 @@ mat33_init(double m00,
            double m22);
 
 
+Mat33
+mat33_id(void);
+
+
 Vec3
 mat33_rvec(Mat33 m, int r);
 

@@ -10,3 +10,4 @@ ___Index: [MyCLib](../README.md)___
  - determinant
  - adjoint matrix
  - inverse matrix
+********

@@ -38,6 +38,13 @@ mat33_init(double m00,
 }
 
 
+Mat33
+mat33_id(void)
+{
+  return mat33_init(1, 0, 0, 0, 1, 0, 0, 0, 1);
+}
+
+
 Vec3
 mat33_rvec(Mat33 m, int r)
 {

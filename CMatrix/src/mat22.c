@@ -4,9 +4,9 @@
  * @brief 2x2 matrices implementation
  * @version 0.1
  * @date 2022-08-14
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 
@@ -22,6 +22,13 @@ mat22_init(double m00, double m01, double m10, double m11)
   mr.data[1][0] = m10;
   mr.data[1][1] = m11;
   return mr;
+}
+
+
+Mat22
+mat22_id(void)
+{
+  return mat22_init(1, 0, 0, 1);
 }
 
 
@@ -159,7 +166,7 @@ mat22_inverse(Mat22 m)
 }
 
 
-Vec2 
+Vec2
 mat22_mul_vec(Mat22 m, Vec2 v)
 {
   Vec2 vr;
