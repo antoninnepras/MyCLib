@@ -1,4 +1,13 @@
-
+/**
+ * @file main.c
+ * @author Antonin Nepras
+ * @brief Matrix test
+ * @version 0.1
+ * @date 2022-10-05
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 
 #include "src/mat22.h"
 #include "src/mat33.h"
@@ -29,6 +38,9 @@ main(int argc, const char** argv)
   Mat22 m2 = mat22_init(2, 3, 4, 5);
   Mat22 mr = mat22_mul_mat(m1, m2);
   mat22_print(mr);
+
+  Mat22 m2_adj = mat22_adjoint(m2);
+  mat22_print(m2_adj);
 
   Vec2 vr = mat22_mul_vec(m1, v);
   vec2_print(vr);
@@ -84,6 +96,3 @@ mat33_print(Mat33 m)
          m.data[2][1],
          m.data[2][2]);
 }
-
-
-

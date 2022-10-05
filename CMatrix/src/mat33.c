@@ -152,17 +152,10 @@ double
 mat33_det(Mat33 m)
 {
   double det = 0;
+  double sign = 1;
   for (int i = 0; i < 3; ++i) {
-    double tmp = 1;
-    for (int j = 0; j < 3; ++j) {
-      tmp *= m.data[j][(i + j) % 3];
-    }
-    det += tmp;
-    tmp = -1;
-    for (int j = 0; j < 3; ++j) {
-      tmp *= m.data[j][(i - j + 3) % 3];
-    }
-    det += tmp;
+    det += sign * m.data[0][i] * mat22_det(mat33_mat22_withoutrc(m, 0, i));
+    sign *= -1;
   }
 
   return det;
@@ -205,9 +198,11 @@ Mat33
 mat33_adjoint(Mat33 m)
 {
   Mat33 mr;
+  int sign = 1;
   for (int i = 0; i < 3; ++i) {
     for (int j = 0; j < 3; ++j) {
-      mr.data[i][j] = mat22_det(mat33_mat22_withoutrc(m,  i, j));
+      mr.data[i][j] = sign * mat22_det(mat33_mat22_withoutrc(m, j, i));
+      sign *= -1;
     }
   }
 
