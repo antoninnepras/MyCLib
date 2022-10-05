@@ -1,22 +1,23 @@
 /**
- * @file Vec3.h
+ * @file vec4.h
  * @author Antonin Nepras
- * @brief Vec3 structure
+ * @brief Vec4 structure
  * @version 0.1
- * @date 2022-08-11
+ * @date 2022-10-05
  *
  * @copyright Copyright (c) 2022
  *
  */
 
-#ifndef __vec3_h__
-#define __vec3_h__
+
+#ifndef __vec4_h__
+#define __vec4_h__
 
 #include <math.h>
 
 
 /**
- * @brief 3D Vector structure
+ * @brief 4D Vector structure
  *
  */
 typedef struct
@@ -24,7 +25,8 @@ typedef struct
   double x;
   double y;
   double z;
-} Vec3;
+  double w;
+} Vec4;
 
 
 /**
@@ -33,10 +35,11 @@ typedef struct
  * @param x
  * @param y
  * @param z
+ * @param w
  * @return Vec2
  */
-Vec3
-vec3_init(double x, double y, double z);
+Vec4
+vec4_init(double x, double y, double z, double w);
 
 
 /**
@@ -44,10 +47,10 @@ vec3_init(double x, double y, double z);
  *
  * @param v1
  * @param v2
- * @return Vec3
+ * @return Vec4
  */
-Vec3
-vec3_add(Vec3 v1, Vec3 v2);
+Vec4
+vec4_add(Vec4 v1, Vec4 v2);
 
 
 /**
@@ -55,10 +58,10 @@ vec3_add(Vec3 v1, Vec3 v2);
  *
  * @param v1
  * @param v2
- * @return Vec3
+ * @return Vec4
  */
-Vec3
-vec3_sub(Vec3 v1, Vec3 v2);
+Vec4
+vec4_sub(Vec4 v1, Vec4 v2);
 
 
 /**
@@ -66,10 +69,10 @@ vec3_sub(Vec3 v1, Vec3 v2);
  *
  * @param v
  * @param m
- * @return Vec3
+ * @return Vec4
  */
-Vec3
-vec3_mul(Vec3 v, double m);
+Vec4
+vec4_mul(Vec4 v, double m);
 
 
 /**
@@ -77,10 +80,10 @@ vec3_mul(Vec3 v, double m);
  *
  * @param v
  * @param d
- * @return Vec3
+ * @return Vec4
  */
-Vec3
-vec3_div(Vec3 v, double d);
+Vec4
+vec4_div(Vec4 v, double d);
 
 
 /**
@@ -91,18 +94,7 @@ vec3_div(Vec3 v, double d);
  * @return double
  */
 double
-vec3_dot(Vec3 v1, Vec3 v2);
-
-
-/**
- * @brief Vector cross product
- *
- * @param v1
- * @param v2
- * @return Vec3
- */
-Vec3
-vec3_cross(Vec3 v1, Vec3 v2);
+vec4_dot(Vec4 v1, Vec4 v2);
 
 
 /**
@@ -112,17 +104,17 @@ vec3_cross(Vec3 v1, Vec3 v2);
  * @return double
  */
 double
-vec3_size(Vec3 v);
+vec4_size(Vec4 v);
 
 
 /**
  * @brief Vector normalise
  *
  * @param v
- * @return Vec3
+ * @return Vec4
  */
-Vec3
-vec3_norm(Vec3 v);
+Vec4
+vec4_norm(Vec4 v);
 
 
 #endif
