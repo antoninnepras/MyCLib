@@ -1,4 +1,5 @@
-#include "string.h"
+#include "src/string.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -18,6 +19,10 @@
 int
 main(int argc, const char** argv)
 {
+  String* readme = string_load_file("README.md");
+  string_fprint(stdout, readme);
+  string_del(readme);
+
   if (argc < 2) {
     return ERROR;
   }
