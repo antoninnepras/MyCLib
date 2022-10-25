@@ -165,7 +165,7 @@ string_get_alpha_value(const char* string)
   int len = strlen(string);
   double val = 0;
   double div = 1;
-  for (int i = 0; i < len - 1; ++i) {
+  for (int i = 0; i < len; ++i) {
     val += (double)string[i] / div;
     div *= 128;
   }
