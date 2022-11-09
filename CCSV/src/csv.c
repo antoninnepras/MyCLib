@@ -71,7 +71,6 @@ csv_value_fload(FILE* file, char separator)
       if (len == 0) {
         in_dq = true;
       } else {
-        printf("here\n");
         // misplaced quotes
         free(value);
         return NULL;
