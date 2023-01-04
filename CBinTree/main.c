@@ -28,12 +28,25 @@ my_rand(int max)
 
 
 int
+metric_num(void* n1, void* n2)
+{
+  if (*(int*)n1 < *(int*)n2) {
+    return -1;
+  } else if (*(int*)n1 == *(int*)n2) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
+
+
+int
 main(int argc, const char** argv)
 {
   srand(time(NULL));
   BinTree* tree = bin_tree_new();
   for (int i = 0; i < 10; ++i) {
-    bin_tree_insert_sorted(tree, new_num(my_rand(100)), num_metric);
+    bin_tree_insert_sorted(tree, new_num(my_rand(40)), num_metric);
   }
 
   void* tmp;
@@ -48,7 +61,20 @@ main(int argc, const char** argv)
   }
 
   for (int i = 0; i < 10; ++i) {
-    bin_tree_insert_sorted(tree, new_num(my_rand(100)), num_metric);
+    bin_tree_insert_sorted(tree, new_num(my_rand(40)), num_metric);
+  }
+
+
+  for (int i = 0; i < 40; ++i) {
+    if (bin_tree_in_sorted(tree, &i, metric_num)) {
+      printf("%i\n", i);
+    }
+  }
+
+  for (int i = 0; i < 40; ++i) {
+    if (bin_tree_in(tree, &i, metric_num)) {
+      printf("%i\n", i);
+    }
   }
 
   while (bin_tree_pop_right(tree, &tmp) == EXIT_SUCCESS) {

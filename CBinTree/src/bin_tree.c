@@ -219,6 +219,47 @@ bin_node_count_down(BinNode* node)
 
 
 int
+bin_node_in(BinNode* node, void* data, int (*metric)(void*, void*))
+{
+  if (node == NULL || metric == NULL) {
+    return -1;
+  }
+
+  if (metric(node->data, data) == 0) {
+    return 1;
+  } else if (node->left != NULL &&
+             bin_node_in((BinNode*)node->left, data, metric)) {
+    return 1;
+  } else if (node->right != NULL &&
+             bin_node_in((BinNode*)node->right, data, metric)) {
+    return 1;
+  }
+
+  return 0;
+}
+
+
+int
+bin_node_in_sorted(BinNode* node, void* data, int (*metric)(void*, void*))
+{
+  if (node == NULL || metric == NULL) {
+    return -1;
+  }
+
+  int m = metric(data, node->data);
+  if (m == 0) {
+    return 1;
+  } else if (m < 0 && node->left != NULL) {
+    return bin_node_in_sorted((BinNode*)node->left, data, metric);
+  } else if (m > 0 && node->right != NULL) {
+    return bin_node_in_sorted((BinNode*)node->right, data, metric);
+  }
+
+  return 0;
+}
+
+
+int
 print_node(BinNode* node, int indent, void (*print_data)(void*))
 {
   if (node == NULL || print_data == NULL) {
@@ -475,4 +516,34 @@ bin_tree_pop_right(BinTree* tree, void** data)
   --tree->size;
 
   return EXIT_SUCCESS;
+}
+
+
+int
+bin_tree_in(BinTree* tree, void* data, int (*metric)(void*, void*))
+{
+  if (tree == NULL || metric == NULL) {
+    return -1;
+  }
+
+  if (tree->root == NULL) {
+    return 0;
+  }
+
+  return bin_node_in(tree->root, data, metric);
+}
+
+
+int
+bin_tree_in_sorted(BinTree* tree, void* data, int (*metric)(void*, void*))
+{
+  if (tree == NULL || metric == NULL) {
+    return -1;
+  }
+
+  if (tree->root == NULL) {
+    return 0;
+  }
+
+  return bin_node_in_sorted(tree->root, data, metric);
 }

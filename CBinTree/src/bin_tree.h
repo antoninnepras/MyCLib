@@ -156,6 +156,32 @@ bin_node_count_down(BinNode* node);
 
 
 /**
+ * @brief Finds if data is in node and its childs
+ *
+ * @param node      binary node
+ * @param data      data to find
+ * @param metric  metric for comparison
+ *                (-1 smaller than | 0 equal | 1 greater than)
+ * @return int    1 - found, 0 - not found, -1 - ERROR
+ */
+int
+bin_node_in(BinNode* node, void* data, int (*metric)(void*, void*));
+
+
+/**
+ * @brief Finds if data is in node and its childs, if data is sorted
+ *
+ * @param node    binary node
+ * @param data    data to find
+ * @param metric  metric for comparison
+ *                (-1 smaller than | 0 equal | 1 greater than)
+ * @return int    1 - found, 0 - not found, -1 - ERROR
+ */
+int
+bin_node_in_sorted(BinNode* node, void* data, int (*metric)(void*, void*));
+
+
+/**
  * @brief Print node tree
  *
  * @param node        node to print from
@@ -263,5 +289,30 @@ bin_tree_pop_left(BinTree* tree, void** data);
 int
 bin_tree_pop_right(BinTree* tree, void** data);
 
+
+/**
+ * @brief Finds if data is in binary tree
+ *
+ * @param tree    binary tree
+ * @param data    data to find
+ * @param metric  metric for comparison
+ *                (-1 smaller than | 0 equal | 1 greater than)
+ * @return int    1 - found, 0 - not found, -1 - ERROR
+ */
+int
+bin_tree_in(BinTree* tree, void* data, int (*metric)(void*, void*));
+
+
+/**
+ * @brief Finds if data is in binery tree if the tree is sorted
+ *
+ * @param tree      binary tree
+ * @param data      data to find
+ * @param metric  metric for comparison
+ *                (-1 smaller than | 0 equal | 1 greater than)
+ * @return int    1 - found, 0 - not found, -1 - ERROR
+ */
+int
+bin_tree_in_sorted(BinTree* tree, void* data, int (*metric)(void*, void*));
 
 #endif
