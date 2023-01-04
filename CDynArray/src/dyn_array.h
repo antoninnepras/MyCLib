@@ -102,6 +102,18 @@ dyn_arr_insert(DynArr* arr, void* value, long position);
 
 
 /**
+ * @brief Insert data into dynamic array, smaller metric value first
+ *
+ * @param arr       dynamic array structure
+ * @param value     data
+ * @param metric    metric to determine, what insert first
+ * @return int      SUCCESS or ERROR
+ */
+int
+dyn_arr_insert_sorted(DynArr* arr, void* value, double (*metric)(void*));
+
+
+/**
  * @brief Remove data from back of the dynamic array
  *
  * @param arr       dynamic array structure

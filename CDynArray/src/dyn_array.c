@@ -121,6 +121,24 @@ dyn_arr_insert(DynArr* arr, void* value, long position)
 }
 
 
+int
+dyn_arr_insert_sorted(DynArr* arr, void* value, double (*metric)(void*))
+{
+  if (arr == NULL || metric == NULL) {
+    return ERROR;
+  }
+
+  double value_metric = metric(value);
+  long position = 0;
+  while (position < arr->size && value_metric > metric(arr->data[position])) {
+    ++position;
+  }
+
+
+  return dyn_arr_insert(arr, value, position);
+}
+
+
 void*
 dyn_arr_pop_back(DynArr* arr)
 {
