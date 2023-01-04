@@ -1,7 +1,10 @@
 #include "src/bin_tree.h"
+#include <time.h>
+
 
 int*
 new_num(int num);
+
 
 double
 num_metric(void* data)
@@ -9,11 +12,13 @@ num_metric(void* data)
   return (double)(*(int*)data);
 }
 
+
 void
 print_num(void* data)
 {
   printf("data: %i", *(int*)data);
 }
+
 
 int
 my_rand(int max)
@@ -25,15 +30,35 @@ my_rand(int max)
 int
 main(int argc, const char** argv)
 {
-  BinNode* root = bin_node_new(new_num(0), NULL, BIN_NODE_ROOT);
+  srand(time(NULL));
+  BinTree* tree = bin_tree_new();
   for (int i = 0; i < 10; ++i) {
-    bin_node_insert_sorted(root, new_num(my_rand(100)), num_metric);
+    bin_tree_insert_sorted(tree, new_num(my_rand(100)), num_metric);
   }
 
-  print_node(root, 0, print_num);
+  void* tmp;
 
-  bin_node_del_all(&root, free);
+  print_node(tree->root, 0, print_num);
 
+
+  for (int i = 0; i < 5; ++i) {
+    bin_tree_pop_left(tree, &tmp);
+    printf("left: %i\n\n", *(int*)tmp);
+    free(tmp);
+  }
+
+  for (int i = 0; i < 10; ++i) {
+    bin_tree_insert_sorted(tree, new_num(my_rand(100)), num_metric);
+  }
+
+  while (bin_tree_pop_right(tree, &tmp) == EXIT_SUCCESS) {
+    printf("right: %i\n\n", *(int*)tmp);
+    free(tmp);
+  }
+
+  print_node(tree->root, 0, print_num);
+
+  bin_tree_del_all(&tree, free);
   return EXIT_SUCCESS;
 }
 

@@ -47,6 +47,17 @@ typedef struct
 
 
 /**
+ * @brief Binary tree structure
+ *
+ */
+typedef struct
+{
+  BinNode* root;
+  size_t size;
+} BinTree;
+
+
+/**
  * @brief Create new binary node structure
  *
  * @param data        data
@@ -135,6 +146,16 @@ bin_node_count_up(BinNode* node);
 
 
 /**
+ * @brief Update child count down the chain
+ *
+ * @param node    node to update from
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_node_count_down(BinNode* node);
+
+
+/**
  * @brief Print node tree
  *
  * @param node        node to print from
@@ -144,6 +165,103 @@ bin_node_count_up(BinNode* node);
  */
 int
 print_node(BinNode* node, int indent, void (*print_data)(void*));
+
+
+/**
+ * @brief Create new binary tree structure
+ *
+ * @return BinTree*
+ */
+BinTree*
+bin_tree_new(void);
+
+
+/**
+ * @brief Delete binary tree structure
+ *
+ * @param tree    binary tree
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_del(BinTree** tree);
+
+
+/**
+ * @brief Delete binary tree structure and its data
+ *
+ * @param tree      binary tree
+ * @param data_del  data delete function
+ * @return int      SUCCESS or ERROR
+ */
+int
+bin_tree_del_all(BinTree** tree, void (*data_del)(void*));
+
+
+/**
+ * @brief Insert data to binary tree evenly distributed
+ *
+ * @param tree    binary tree
+ * @param data    data to insert
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_insert(BinTree* tree, void* data);
+
+
+/**
+ * @brief Insert data to binary tree based on metric - smaller on the left
+ *
+ * @param tree    binary tree
+ * @param data    data to insert
+ * @param metric  metric to use for data
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_insert_sorted(BinTree* tree, void* data, double (*metric)(void*));
+
+
+/**
+ * @brief Get the most left data in binary tree
+ *
+ * @param tree    binary tree
+ * @param data    found data from binary tree
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_get_left(BinTree* tree, void** data);
+
+
+/**
+ * @brief Get the most right data in binary tree
+ *
+ * @param tree    binary tree
+ * @param data    found data from binary tree
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_get_right(BinTree* tree, void** data);
+
+
+/**
+ * @brief Pop the most left data in binary tree
+ *
+ * @param tree    binary tree
+ * @param data    found data from binary tree
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_pop_left(BinTree* tree, void** data);
+
+
+/**
+ * @brief Pop the most right data in binary tree
+ *
+ * @param tree    binary tree
+ * @param data    found dta from binary tree
+ * @return int    SUCCESS or ERROR
+ */
+int
+bin_tree_pop_right(BinTree* tree, void** data);
 
 
 #endif
