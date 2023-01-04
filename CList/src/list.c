@@ -163,6 +163,36 @@ list_insert(List* list, void* data, int index)
 }
 
 
+void
+list_insert_sorted(List* list, void* data, double (*metric)(void*))
+{
+  if (list == NULL || metric == NULL) {
+    return;
+  }
+
+  LNode* tmp;
+  tmp = list->begin;
+  double data_val = metric(data);
+  while (tmp != list->end && data_val > metric(tmp->data)) {
+    tmp = tmp->next;
+  }
+
+  if (tmp != NULL) {
+    LNode* tmpn = lnode_new(data, tmp->prev, tmp);
+    tmp->prev = tmpn;
+
+    if (tmpn->prev != NULL) {
+      ((LNode*)tmpn->prev)->next = tmpn;
+    } else {
+      list->begin = tmpn;
+    }
+    list->size++;
+  } else {
+    list_append(list, data);
+  }
+}
+
+
 void*
 list_get(List* list, int index)
 {

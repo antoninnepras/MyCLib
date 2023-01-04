@@ -13,6 +13,13 @@
 #include <stdio.h>
 
 
+double
+metric(void* data)
+{
+  return (*(int*)data);
+}
+
+
 int
 main(int argc, const char** argv)
 {
@@ -37,7 +44,7 @@ main(int argc, const char** argv)
   for (int i = 0; i < 5; ++i) {
     int* data = malloc(sizeof(int));
     *data = -1;
-    list_insert(list, data, 2 * i);
+    list_insert_sorted(list, data, metric);
   }
 
   // remove data from the list
