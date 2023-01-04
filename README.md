@@ -6,6 +6,7 @@ Files for later use in my other projects
 - [CDynArray](CDynArray/README.md)
 - [CString](CString/README.md)
 - [CMap](CMap/README.md)
+- [CBinTree](CBinTree/README.md)
 
 ## Structure operations
 - [CSort](CSort/README.md)
